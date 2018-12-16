@@ -1,0 +1,24 @@
+# Set the database
+#
+# .properties = 0
+# .json = 1
+# .yml = 2
+# .sl = 4
+## more in coming
+provider-type: 2
+
+# form text
+form-title: "PocketTips"
+form-next: "Next Tip!"
+form-disable-tips: "don't show again"
+
+# can be replace:
+# {player} = Player Name
+# & = § ("&aHello" = true, &aHello = false)
+## more in coming
+tips:
+  - Welcome to my server!
+  - Tips are shown to help you, you can turn them off at any time!
+  - tips
+  - tips
+  - You are ready to play!
