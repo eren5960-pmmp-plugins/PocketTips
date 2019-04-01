@@ -21,8 +21,6 @@ abstract class Provider{
     const PROVIDER_JSON = 1;
     const PROVIDER_YAML = 2;
     const PROVIDER_SERIALIZED = 4;
-    //const PROVIDER_NBT = 31;
-    //const PROVIDER_SQL = 62;
 
     public static $formats = [
         self::PROVIDER_JSON => "json",
@@ -39,10 +37,10 @@ abstract class Provider{
      */
     abstract public function getPlayerTipCount(Player $player): int;
 
-    /**
-     * @param Player $player
-     * @param int $count
-     */
+	/**
+	 * @param Player $player
+	 * @param int    $count
+	 */
     abstract public function setPlayerTipCount(Player $player, int $count): void;
 
     /**
@@ -68,7 +66,7 @@ abstract class Provider{
      */
     public static function getProvider(Main $main, int $type): ?Provider{
         if($type === -1 || !in_array($type, [0, 1, 2, 4]))
-            throw new \InvalidArgumentException("provider-type nothing...");
+            throw new \InvalidArgumentException("provider-type not nothing...");
 
         return new MangoProvider($main, $type); // for now
     }

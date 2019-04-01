@@ -13,8 +13,7 @@ declare(strict_types=1);
 
 namespace Eren5960\PocketTips;
 
-use Eren5960\PocketTips\form\AltayTipsForm;
-use Eren5960\PocketTips\form\PMMPTipsForm;
+use Eren5960\PocketTips\form\TipsForm;
 use Eren5960\PocketTips\provider\Provider;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerJoinEvent;
@@ -66,14 +65,6 @@ class Main extends PluginBase implements Listener{
      * @param int $tip
      */
     public function sendForm(Player $player, int $tip): void{
-        if(\pocketmine\NAME === "Altay"){
-            $player->sendForm(new AltayTipsForm($this, $player, $tip));
-        }else{
-            if(!class_exists("jojoe77777\FormAPI\ModalForm")){
-                throw new \InvalidArgumentException("FormAPI not found...");
-            }
-
-            new PMMPTipsForm($this, $player, $tip);
-        }
+    	$player->sendForm(new TipsForm($this, $player, $tip));
     }
 }
